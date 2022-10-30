@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 546.9 266">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Geometric415BT-BlackA, 'Geometr415 Blk BT';
+        font-size: 152.3px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #1e2833;
+      }
+
+      .cls-3 {
+        letter-spacing: -.1em;
+      }
+
+      .cls-4 {
+        letter-spacing: 0em;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g>
+        <polygon class="cls-2" points="0 0 80 230.3 158.7 230.3 79.4 0 0 0"/>
+        <polygon class="cls-2" points="238.1 0 159.4 0 132.9 76.3 172.3 190.9 238.1 0"/>
+      </g>
+      <text class="cls-1" transform="translate(216 230.1) scale(1 1)"><tspan class="cls-4" x="0" y="0">EN</tspan><tspan class="cls-3" x="212.3" y="0">V</tspan><tspan class="cls-4" x="290" y="0">.</tspan></text>
+    </g>
+  </g>
+</svg>
