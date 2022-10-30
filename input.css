@@ -35,3 +35,10 @@ body {
 .modal-btn {
   @apply transition duration-200 hover:shadow-2xl hover:scale-105;
 }
+
+li.check {
+  @apply mt-1;
+}
+li.check::before {
+  content: '\f00c';
+}
