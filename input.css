@@ -1,0 +1,37 @@
+@font-face {
+    font-family: Rubik;
+    src: url('assets/font/Rubik/Rubik-VariableFont_wght.ttf')
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: "Rubik", sans-serif;
+  overflow-x: hidden;
+}
+.hamburger > span {
+  @apply bg-black h-[2.5px] w-[20px] block transition duration-200;
+}
+
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+}
+.hamburger-active > span:nth-child(2) {
+  @apply opacity-0;
+}
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+}
+
+.nav-item {
+  @apply px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-blue-500 focus:text-blue-500;
+}
+.nav-item.active {
+  @apply text-[#3b82f6];
+}
+.modal-btn {
+  @apply transition duration-200 hover:shadow-2xl hover:scale-105;
+}
