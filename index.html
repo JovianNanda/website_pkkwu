@@ -28,8 +28,8 @@
             </div>
             <nav class="hidden flex nav-menu flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row ">
                 <a class="nav-item active hero" href="#hero">Utama</a>
-                <a class="nav-item layanan" href="#layanan">Tentang</a>
-                <a class="nav-item keunggulan" href="#keunggulan">Layanan</a>
+                <a class="nav-item tentang" href="#tentang">Tentang</a>
+                <a class="nav-item layanan" href="#layanan">Layanan</a>
                 <a class="nav-item testimoni" href="#testimoni">Testimoni</a>
                 <a class="nav-item kontak" href="#kontak">Kontak</a>
             </nav>
@@ -46,29 +46,26 @@
                         </p>
                     </h2>
                     <h2 class="mt-5 md:text-2xl text-gray-700">Jasa pembuatan website aman dan cepat.</h2>
-                    <button type="button"
-                        class="mt-5 px-3 py-2 rounded-full bg-[#3b82f6] text-white hover:bg-sky-600 transtition duration-150">Get
-                        Started</button>
+                    <a href="#layanan"><button type="button"
+                            class="mt-5 px-3 py-2 rounded-full bg-[#3b82f6] text-white hover:bg-sky-600 transtition duration-150">Get
+                            Started</button></a>
                 </div>
                 <div class="w-full md:w-1/2 pt-12 md:pt-20 px-16 md:pr-32">
-                    <img class="w-full" src="assets/image/hero-image.png">
+                    <img class="w-full ease-in " src="assets/image/hero-image.png">
                 </div>
             </div>
         </div>
     </section>
     <!--EndHeroSection-->
     <!--Page 2-->
-    <section id="layanan" class="scroll-mt-12">
+    <section id="tentang" class="scroll-mt-12">
         <div class="page-2 bg-gray-50 w-full py-12">
             <div class="flex flex-wrap items-center px-16 md:px-32">
                 <div class="hidden md:block w-full md:w-1/2 md:pt-20">
                     <img class="md:w-[70%]" src="assets/image/page-2.png" alt="">
                 </div>
                 <div class="w-full md:w-1/2 ">
-                    <div
-                        class="w-fit after:content-[''] after:block after:border-b-2  after:mt-2 after:border-[#3b82f6] after:w-1/2 after:mx-auto">
-                        <h2 class="text-2xl md:text-4xl font-semibold ">VirtualEnv.</h2>
-                    </div>
+                    <h2 class="text-2xl md:text-4xl font-semibold ">VirtualEnv.</h2>
                     <p class="text-gray-600 mt-8">VirtualEnv adalah sebuah layanan yang menyediakan jasa pembuatan
                         website dari awal hingga website tersebut dapat diakses secara online. VirtualEnv juga
                         memiliki keunggulan seperti berikut.</p>
@@ -89,7 +86,7 @@
     </section>
     <!--End Page 2-->
     <!--Page 3-->
-    <section id="keunggulan" class="scroll-mt-12">
+    <section id="layanan" class="scroll-mt-12">
         <div class="page-3 bg-white py-8 w-full">
             <div class="w-fit h-fit mx-auto">
                 <h2
@@ -212,7 +209,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 px-16 md:px-32">
                 <div class="shadow-lg rounded-lg border px-8 py-8">
                     <div class="flex items-center w-full ">
-                        <img src="assets/image/usaer.jpg" alt="" class="w-16 rounded-full">
+                        <img src="https://source.unsplash.com/70x70?profile" alt="" class="w-16 rounded-full">
                         <div class="pl-4">
                             <h3 class="text-xl ">Adrian</h3>
                             <div class="text-gray-600">Python Dev</div>
@@ -227,7 +224,7 @@
                 </div>
                 <div class=" shadow-lg rounded-lg border px-8 py-8">
                     <div class="flex items-center w-full ">
-                        <img src="assets/image/usaer.jpg" alt="" class="w-16 rounded-full">
+                        <img src="https://source.unsplash.com/64x64?profile" alt="" class="w-16 rounded-full">
                         <div class="pl-4">
                             <h3 class="text-xl ">Aditya</h3>
                             <div class="text-gray-600">Mahasiswa</div>
@@ -242,7 +239,7 @@
                 </div>
                 <div class=" shadow-lg rounded-lg border px-8 py-8">
                     <div class="flex items-center w-full ">
-                        <img src="assets/image/usaer.jpg" alt="" class="w-16 rounded-full">
+                        <img src="https://source.unsplash.com/60x60?profile" alt="" class="w-16 rounded-full">
                         <div class="pl-4">
                             <h3 class="text-xl ">Jovian</h3>
                             <div class="text-gray-600">CEO Perusahaan</div>
@@ -290,6 +287,11 @@
                     <textarea name="pesan" id="pesan" rows="4"
                         class="w-full mt-2 px-3 py-2 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-sky-300 transition duration-150"></textarea>
                 </div>
+                <div class="mt-3">
+                    <button
+                        class="px-3 py-2 bg-gradient-to-r from-[#5794f7] to-[#99b9ec] rounded text-white hover:text-black transistion-all duration-700">Send
+                        <i class="fa-solid fa-arrow-right ml-1 mr-1 "></i></button>
+                </div>
             </form>
 
         </div>
@@ -322,6 +324,7 @@
     </footer>
 
     <!--Script-->
+    <script src="node_modules/animejs/lib/anime.min.js"></script>
     <script>
         const nav_items = document.querySelectorAll('.nav-item')
         nav_items.forEach(function (el) {
@@ -382,8 +385,6 @@
         activeMenuOnScroll
         window.addEventListener("scroll", addShadowOnScroll)
         window.addEventListener("scroll", activeMenuOnScroll)
-
-
     </script>
 </body>
 
