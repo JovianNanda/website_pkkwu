@@ -1,5 +1,5 @@
-# website_pkkwu
+# Env - PKKWU
 
-Tugas *PKKWU* Promosi
+Tugas Produk Kreatif dan Kewirausahaan - Promosi
 
 https://env-pkkwu.netlify.app/
