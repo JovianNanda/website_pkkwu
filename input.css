@@ -42,3 +42,22 @@ li.check {
 li.check::before {
   content: '\f00c';
 }
+
+.alert-success {
+  @apply flex w-full justify-between p-4 mt-3 bg-green-100 rounded-lg;
+}
+.alert-success div {
+  @apply text-green-700 font-medium;
+}
+.alert-success button {
+  @apply ml-auto bg-green-100 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 -my-1.5 -mx-1.5 hover:bg-green-200 h-8 w-8;
+}
+.alert-error {
+  @apply flex w-full justify-between p-4 mt-3 bg-red-100 rounded-lg;
+}
+.alert-error div {
+  @apply text-red-700 font-medium;
+}
+.alert-error button {
+  @apply ml-auto bg-red-100 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 -my-1.5 -mx-1.5 hover:bg-red-200 h-8 w-8;
+}

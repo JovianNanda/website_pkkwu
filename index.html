@@ -348,25 +348,34 @@
                 <p class="mt-8 text-center">Anda bisa mengirimkan pesan berupa kritik, saran atau pertanyaan kepada kami. Pesan ini akan masuk dan disimpan di sistem kami.</p>
             </div>
             <form action="" class="px-8 md:w-1/2 lg:w-[40%] mx-auto">
+                <div id="alert" class="hidden">
+                    <div class="alert-success">
+                        <div>Pesan berhasil dikirim</div>
+                        <button type="button" onclick="(this.parentNode).parentNode.classList.add('hidden')"><i class="fas fa-xmark"></i></button>
+                    </div>
+                </div>
                 <div class="mt-3">
                     <label for="nama">Nama</label>
-                    <input type="text" id="nama"
+                    <input type="text" id="nama" name="nama" 
                         class="w-full mt-2 px-3 py-2 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-sky-300 transition duration-150 ">
                 </div>
                 <div class="mt-3">
                     <label for="email">Email</label>
-                    <input type="email" id="email"
+                    <input type="email" id="email" name="email" 
                         class="w-full mt-2 px-3 py-2 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-sky-300 transition duration-150">
                 </div>
                 <div class="mt-3">
                     <label for="email">Pesan</label>
-                    <textarea name="pesan" id="pesan" rows="4"
+                    <textarea name="pesan" id="pesan" name="pesan"  rows="4"
                         class="w-full mt-2 px-3 py-2 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-sky-300 transition duration-150"></textarea>
                 </div>
                 <div class="mt-3">
-                    <button
-                        class="px-3 py-2 bg-gradient-to-r from-[#5794f7] to-[#99b9ec] rounded text-white hover:text-black transistion-all duration-700 animate-bounce">Send
-                        <i class="fa-solid fa-arrow-right ml-1 mr-1 "></i></button>
+                    <button type="submit" 
+                        class="btn-kirim px-3 py-2 bg-gradient-to-r from-[#5794f7] to-[#99b9ec] rounded text-white hover:text-black transistion-all duration-700 animate-bounce disabled:opacity-50">Send
+                        <i class="fa-solid fa-arrow-right ml-1 mr-1"></i></button>
+                    <button type="button" disabled 
+                        class="btn-loading hidden px-3 py-2 bg-gradient-to-r from-[#5794f7] to-[#99b9ec] rounded text-white transistion-all duration-700 disabled:opacity-50">Loading
+                        <i class="fa-solid fa-spinner ml-1 mr-1 animate-spin"></i></button>
                 </div>
             </form>
 
@@ -461,6 +470,36 @@
         }
         window.addEventListener("scroll", addShadowOnScroll)
         window.addEventListener("scroll", activeMenuOnScroll)
+    </script>
+
+
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbx48PROXdRiwOScMPpfBOfSck6DjktwPC4oumAKEtF_UoPsVSNJ8XPFSga9C7oL4ak/exec'
+      // const form = document.forms['submit-to-google-sheet']
+      const form = document.querySelector("#kontak form")
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        formLoading(true)
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => formLoading(false))
+            .catch(error => formLoading(false, true))
+      })
+
+      function formLoading (status, error = false) {
+          if (status) {
+            form.querySelector('button.btn-kirim').classList.add('hidden')
+            form.querySelector('button.btn-loading').classList.remove('hidden')
+        } else {
+            form.querySelector('button.btn-kirim').classList.remove('hidden')
+            form.querySelector('button.btn-loading').classList.add('hidden')
+            form.querySelector('#alert').classList.remove('hidden')
+            form.querySelector('#alert>div').classList.toggle('alert-success', !error)
+            form.querySelector('#alert>div').classList.toggle('alert-error', error)
+            form.querySelector('#alert>div div').textContent = (!error) ? 'Pesan berhasil dikirim' : 'Pesan gagal dikirim'
+            form.reset()
+        }
+      }
     </script>
 </body>
 
