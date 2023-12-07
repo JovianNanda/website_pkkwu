@@ -15,7 +15,7 @@
 
 <body>
     <!-- Navbar -->
-
+ 
     <div class="w-full text-gray-700 top-0 left-0 right-0 bg-white fixed pt-4 z-50 transition-all" id="nav">
         <div class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6
             lg:px-8 ">
@@ -30,12 +30,12 @@
                 </button>
             </div>
             <nav class="hidden flex nav-menu flex-col flex-grow pb-4 md:pb-0 md:flex md:justify-end md:flex-row ">
-                <a class="nav-item hero active" href="#hero">Utama</a>
-                <a class="nav-item tentang" href="#tentang">Tentang</a>
-                <a class="nav-item layanan" href="#layanan">Layanan</a>
-                <a class="nav-item projects" href="#projects">Projects</a>
-                <a class="nav-item testimoni" href="#testimoni">Testimoni</a>
-                <a class="nav-item kontak" href="#kontak">Kontak</a>
+                <a class="nav-item hero active" onclick="lenis.scrollTo('#hero')" href="#hero">Utama</a>
+                <a class="nav-item tentang" onclick="lenis.scrollTo('#tentang')" href="#tentang">Tentang</a>
+                <a class="nav-item layanan" onclick="lenis.scrollTo('#layanan')" href="#layanan">Layanan</a>
+                <a class="nav-item projects" onclick="lenis.scrollTo('#projects')" href="#projects" >Projects</a>
+                <a class="nav-item testimoni" href="#testimoni" onclick="lenis.scrollTo('#testimoni')">Testimoni</a>
+                <a class="nav-item kontak" href="#kontak" onclick="lenis.scrollTo('#kontak')">Kontak</a>
             </nav>
         </div>
     </div>
@@ -415,12 +415,33 @@
         </div>
     </footer>
     <script src="assets/aos.js"></script>
-    <script src="assets/lenis.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script> 
+    <script>
+        const lenis = new Lenis({
+            duration: 1.5, 
+            easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)), // https://easings.net
+            direction: 'vertical', 
+            smooth: true,
+            smoothTouch: false,
+            touchMultiplier: 1.5,
+          })
+          
+          document.addEventListener("DOMContentLoaded", () => {
+            lenis.start()
+          })
+          
+          function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+          }
+          
+          requestAnimationFrame(raf)
+             
+    </script>
     <script>
         AOS.init();
     </script>
     <!--Script-->
-    <script src="node_modules/animejs/lib/anime.min.js"></script>
     <script>
         const nav_items = document.querySelectorAll('.nav-item')
         nav_items.forEach(function (el) {
